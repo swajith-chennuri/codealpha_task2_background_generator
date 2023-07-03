@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Color Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 50px;
+    }
+
+    .box {
+      margin-top: 50px;
+    }
+
+    .color{
+      display: inline-block;
+      margin: 10px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .button{
+    color: black;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50;
+    font-size: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    .button:hover {
+     background-color: #4CAF50; /* Green */
+     color: white;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Background Color Generator</h1>
+  <div class="box">
+    <button onclick="generateColor()" class="button">Generate Color</button>
+    <div id="colorDisplay" class="color"></div>
+  </div>
+
+  <script>
+    function generateColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+
+      for (var j = 0; j < 6; j++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      document.body.style.backgroundColor = color;
+      document.getElementById('colorDisplay').style.backgroundColor = color;
+      document.getElementById('colorDisplay').innerHTML = color;
+    }
+  </script>
+</body>
+</html>
